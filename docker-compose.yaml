@@ -1,0 +1,24 @@
+services:
+  # api:
+  #   build: .
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     MONGO_HOST: localhost
+  #     MONGO_PORT: 27017
+  #     MONGO_USERNAME: root
+  #     MONGO_PASSWORD: example
+    
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    volumes:
+      - mydatatest:/data/db
+
+volumes:
+  mydatatest:
