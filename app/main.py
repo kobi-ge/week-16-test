@@ -1,10 +1,13 @@
 from fastapi import FastAPI
+import uvicorn
+
+from dal import *
 
 app = FastAPI()
 
 @app.get("/get_engineering_high_salary_employees")
 def get_high_salary_engineers():
-    pass
+    return get_engineering_high_salary_employees()
 
 @app.get("/get_employees_by_age_and_role")
 def get_employees_age_role():
@@ -26,3 +29,4 @@ def get_monagers():
 def get_emp_name_age():
     pass
 
+uvicorn.run(app, host="localhost", port=8000)
