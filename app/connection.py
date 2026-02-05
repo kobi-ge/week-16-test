@@ -11,3 +11,15 @@ username= os.getenv("MONGO_USERNAME")
 password=os.getenv("MONGO_PASSWORD")
 uri = f"mongodb://{username}:{password}@{host}:{port}"
 
+def connect_to_mongo():
+    try:
+        client = MongoClient(uri)
+        client.admin.command("ping")
+        print("connection established")
+        db = client['mydb']
+        collection = db['mycoll']
+        print(collection)
+        return collection
+    except Exception as e:
+        print(f"connection failed: {e}")
+        return None
