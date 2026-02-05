@@ -11,7 +11,7 @@ def get_high_salary_engineers():
 
 @app.get("/get_employees_by_age_and_role")
 def get_employees_age_role():
-    pass
+    return get_employees_by_age_and_role()
 
 @app.get("/get_top_seniority_employees_excluding_hr")
 def get_top_seniority():
