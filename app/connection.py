@@ -15,7 +15,7 @@ print(uri)
 
 
 def load_db(Collection):
-    with open('./employee_data_advanced.json') as file:
+    with open('employee_data_advanced.json') as file:
         file_data = json.load(file)
 
     # Inserting the loaded data in the Collection

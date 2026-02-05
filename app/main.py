@@ -29,4 +29,3 @@ def get_monagers():
 def get_emp_name_age():
     return get_employees_by_lastname_and_age()
 
-uvicorn.run(app, host="localhost", port=8000)
