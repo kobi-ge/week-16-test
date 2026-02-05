@@ -53,4 +53,11 @@ def get_managers_excluding_departments():
     except Exception as e:
         return f"the following error occured: {e}"
     
-    
+def get_employees_by_lastname_and_age():
+    try:
+        query = {"$and": [{"$or": [{"name": {"$regex": "Wright$"}}, {"name": {"$regex": "Nelson$"}}]}, {"age": {"$lt": 35}}]}
+        select = {"name": 1, "age": 1, "job_role.department": 1, "_id": 0}
+        results = collection.find(query, select).to_list()
+        return results
+    except Exception as e:
+        return f"the following error occured: {e}"

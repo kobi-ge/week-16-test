@@ -27,6 +27,6 @@ def get_monagers():
 
 @app.get("/get_employees_by_lastname_and_age")
 def get_emp_name_age():
-    pass
+    return get_employees_by_lastname_and_age()
 
 uvicorn.run(app, host="localhost", port=8000)
